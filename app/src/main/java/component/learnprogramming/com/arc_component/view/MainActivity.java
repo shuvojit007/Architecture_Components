@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
         noteViewModel = ViewModelProviders.of(this).get(NoteViewModel.class);
         noteViewModel.getAllNotes().observe(this, (notes) -> {
             Toast.makeText(MainActivity.this, "Data Changed" + notes.size(), Toast.LENGTH_SHORT).show();
-            adp.setNotes(notes);
+            adp.submitList(notes);
 
         });
 
@@ -78,7 +78,6 @@ public class MainActivity extends AppCompatActivity {
                             .putExtra(AddNoteActivity.EXTRA_PRIORITY, note.getPriority())
                             .putExtra(AddNoteActivity.EXTRA_ID, note.getId()),
                     MainActivity.EDIT_NOTE_REQUEST));
-
     }
 
     @Override
