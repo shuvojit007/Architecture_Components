@@ -1,12 +1,12 @@
 package component.learnprogramming.com.arc_component.database;
 
-import android.arch.persistence.db.SupportSQLiteDatabase;
-import android.arch.persistence.room.Database;
-import android.arch.persistence.room.Room;
-import android.arch.persistence.room.RoomDatabase;
+import androidx.sqlite.db.SupportSQLiteDatabase;
+import androidx.room.Database;
+import androidx.room.Room;
+import androidx.room.RoomDatabase;
 import android.content.Context;
 import android.os.AsyncTask;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 
 import component.learnprogramming.com.arc_component.model.Note;
 
@@ -52,4 +52,22 @@ public abstract class NoteDatabase extends RoomDatabase {
             return null;
         }
     }
+
+
+//    private static volatile  NoteDatabase noteDatabase;
+//
+//    static NoteDatabase getNoteDatabase(final Context context){
+//        if (noteDatabase==null){
+//            synchronized (NoteDatabase.class){
+//                if (noteDatabase==null){
+//                    noteDatabase= Room.databaseBuilder(context,
+//                            NoteDatabase.class,"note_database")
+//                            .fallbackToDestructiveMigration()
+//                            .addCallback(callback)
+//                            .build();
+//                }
+//            }
+//        }
+//        return noteDatabase;
+//    }
 }

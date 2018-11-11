@@ -1,7 +1,7 @@
 package component.learnprogramming.com.arc_component.controller;
 
 import android.app.Application;
-import android.arch.lifecycle.LiveData;
+import androidx.lifecycle.LiveData;
 import android.os.AsyncTask;
 
 import java.util.List;
